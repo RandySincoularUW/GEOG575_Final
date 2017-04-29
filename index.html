@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- GEOG 575 Final Project -->
+<!-- Randy Sincoular		-->
+<!-- Monday, 24-Apr-17	Add map to web page -->
+<!-- Saturday, 29-Apr-17 Add Emergency Contacts Button -->
+
+<head>
+	<title>GEOG 575 Final Project</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />  <!-- add 26-apr-17 -->
+	
+	<!-- Leaflet CSS Stylesheet  -->
+	<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+	
+	<!-- jQuery Stylesheet -->
+	<link rel="stylesheet" href = "css/jquery-ui.min.css">
+	
+	<!-- easy button style sheet -->
+	<link rel="stylesheet" href="css/easy-button.css">
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+	
+	<!-- Leaflet library -->
+	<script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
+		
+	
+	<!-- Geocoding Plugin 23-Apr-17 -->
+	<link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
+	
+	<!-- Custom Style Sheet -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="https://mapzen.com/js/mapzen.min.js"></script>
+	
+<style>
+
+
+	
+</style>
+
+</head>
+
+<body>
+
+	
+	<div id=mydiv></div>
+
+
+	<div id = "header">
+		<h1 id = "project_title">Cottage Grove - Situational Awareness</h1>
+		<a href="#" id="huh">About</a>						<!-- Tues. 25-Apr-17 -->
+		<a href="#" id="contacts">Emergency Contacts</a>	<!-- Wed. 26-Apr-17 -->
+		<a href="http://forecast.weather.gov/MapClick.php?lat=43.093688312666586&lon=-89.20208294557074#.WQSlY4grKUk" target='_blank' id="weather">Cottage Grove WX Forecast</a>
+	</div>
+	
+		<!-- ------------ -->
+		<!-- About Buttom -->
+		<!-- ------------ -->
+	
+		<div id = "about">
+		<h3>About This Map</h3>
+			<div>
+				<p>This map is my Final Project for GEOG 575</p>
+				
+				<p></p>
+				<p>The <a href='http://leafletjs.com/' target='_blank'>Leaflet library</a>, was used to create this map that combines 2016 parcel data and a selection of 40 Cottage Grove businesses. The parcels and business features have been converted to geoJSON format in a WGS 1984 Geographic Coordinate System. This web application includes a Mapzen geocoder and an optional Weather Radar layer from Iowa State University.</p>
+				<h4>Location</h4>
+				<p>Cottage Grove, Wisconsin 53527 <br>
+				43.0761, -89.1996
+				</p>
+				
+				<h4>Purpose</h4>
+				<p>This map is intended to be used for situational awareness in the event of an emergency or disaster.</p>
+
+				<h4>Using this Web Map</h4>
+				<p>- Hover over an icon to get business name and phone number</p>
+				<p>- Left click on a parcel to get Property Owner and Billing Address</p>
+				<p>- Left click on layer icon to turn on/off Weather Radar and Parcels</p>
+				<p>- Left click the magnifying glass icon to enter an address and zoom to that location</p>
+			
+				
+			</div>
+			
+			<h4>Icons</h4>
+			<p><a href="http://mapkeyicons.com" target="_blank">Mapkey Icons</a></p>
+			<h4>Geocoder</h4>
+			<p><a href="https://github.com/mapzen/leaflet-geocoder" target="_blank">Mapzen</a></p>
+			<h4>Data Sources - Parcels</h4>
+			<p><a href="http://maps.sco.wisc.edu/opengeoportal/openGeoPortalHome.jsp" target="_blank">University of Wisconsin GeoData</a></p>
+			<h4>Author</h4>
+			<p><a href="https://randysincoularuw.github.io/portfolio4/" target="_blank">Randy Sincoular</a></p>
+			<br><br>
+			<p id="dismiss">Click anywhere in this window to dismiss it</p>
+			
+		</div>  <!-- end 'about' -->
+		
+	<!-- ------------------ -->
+	<!-- Emergency Contacts -->
+	<!-- ------------------ -->
+	
+			<div id = "emergency">
+				<h3>Emergency Contacts</h3>
+					<div>
+
+						<h4>Police</h4>
+							<p>Village of Cottage Grove Police<br>
+							608-839-4652</p><br>
+
+							<p>Town of Cottage Grove Police<br>
+							608-226-4948</p><br>
+
+							<p>Deerfield Police<br>
+							608-764-5626</p><br>
+
+							<p>Dane County Sheriff<br>
+							608-284-6800</p><br>
+				
+						<h4>Fire</h4>
+							<p>Cottage Grove Fire<br>
+							608-839-4343</p><br>
+
+							<p>Madison Fire Station #5<br>
+							608-266-4420</p><br>
+
+							<p>Deerfield Fire<br>
+							608-764-5343</p><br>			
+
+			</div>
+			
+				<h4>Alliant Energy - Gas/Electric Emergencies</h4>
+				<p>800-255-4268</p>
+				
+				<h4>Madison Hazardous Incident Team</h4>
+				<p>608-266-4420</p>
+				
+				<h4>Wisconsin Emergency Management</h4>
+				<p>800-943-0003</p>
+		
+				<h4>Hydrite Chemical</h4>
+				<p>608-839-4571</p>
+				
+			<h4>National Weather Service - Milwaukee</h4>
+			<p><a href="http://www.weather.gov/mkx/" target="_blank">National Weather Service</a></p>
+				
+			<br><br><br>
+			<p id="dismiss">Click anywhere in this window to dismiss it</p>
+			
+		</div>  <!-- end 'about' -->
+	
+		<div id = "map"></div>	
+
+	<!-- </div>	<!-- end 'wrapper' comment out Wed, 26-apr-17 -->  
+
+	
+
+	
+<!-- Weather Widget commented out -->
+
+<script type = "text/javascript" src="lib/jquery-3.1.1.js"></script>
+
+
+<!-- Easy Button -->
+<script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
+
+
+<!-- Custom JavaScript -->
+<script type = "text/javascript" src = "js/main.js"> </script>
+
+	
+<!-- JavaScript to read in geoSJON data -->
+<script type="text/javascript" src = "js/geojson.js"></script>
+	
+
+
+
+</body>
+
+</html>

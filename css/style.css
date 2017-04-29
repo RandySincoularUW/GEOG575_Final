@@ -1,0 +1,425 @@
+/* Stylesheet by Randy Sincoular 16-Jan-17 */
+
+
+
+/* Custom CSS for Leaflet Lab */
+
+#map {
+	
+	/* Wed, 26-apr-17 Comment this out to make map full screen */
+	/* height: 450px;	*/				/* Removing this creates a larger gray area around the title */
+									/* and no map is visible */
+	/*width: 100%; */				/* large gray area around title and no map */
+
+	/* margin: 5px auto; */
+	
+	/* top: -5px;		*/				/* This made the gray area around the title smaller,
+									   but it hides the "About" button */
+	}
+
+/* Format Leaflet Popup */
+.leaflet-popup-content p {
+	margin: 1.5em 3;
+}
+
+
+
+.leaflet-popup-content-wrapper {
+	background-color: #94c2c6;
+	/* these two settings makes the 'X' in the corner hard to see */
+	/* opacity: .9; */	
+	/* box-shadow: 0 3px 14px rgba(0,0,0,0.4); */
+	
+}
+.leaflet-popup-content {
+	margin: 10px 19px;
+	line-height: 1.2;	/* line spacing between lines */
+	opacity: .6
+	
+	color: midnightblue;
+	}
+
+
+#wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+}
+
+
+/* add 22-Feb-17 for map sizing */
+html {
+	
+	/* This is the background outside of the map area */
+	background-color: #100404;
+	/* background-color: gray; */
+	
+}
+
+/* Adding the 'Header' removed the scroll bars */
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #9d9898;
+	z-index: 1000;
+	height: auto;
+	padding-bottom: 5px;
+}
+#project_title {
+  	color: #0f0fe3;
+  	z-index: 15000;						/* Add tues. 25-apr-17 */
+	font-family: 'Lato', 'tahoma', 'sans-serif';	/* Add tues. 25-apr-17 */
+	font-size: 52px;
+	
+	top: 10px;
+		
+	font-size: 36px;
+	width: 100%; 
+	
+}
+
+body {
+	/* width: 960px; */	/* comment out Wed, 26-apr-17 */
+	/* height: 400px; */	/* COMMENT OUT tUES, 25-apr-17 */
+	/* padding: 2px; */
+	
+	/* Add Wed, 26-apr-17 to make map full screen*/
+	padding: 0;		/* these 2 lines removed the thin black bar at the top */
+	margin: 0;	
+	
+	
+	/* Section above and below the title  */
+	/* and at the bottom of the map */
+	
+	/* background-color: #4a1919;  */
+	/* comment out 24-Apr-17 */
+	background-color: #867f7f; 
+		
+	background-color: #c1baba; 
+	
+}
+
+/* Add Wed 26-apr-17 to make the map full screen */
+htm, body, #map {
+
+	height: 100vh;
+	width: 100vw;
+
+}
+
+/* Add Wed, 26-apr-17 */
+/* this removes the scrool bars, but the title is gone or hidden; the About button is also gone/hidden */
+
+#map {
+	top: 0;
+	left: 0;
+	
+	/* position: absolute; */  /* with this set, it removes the scroll bars but hides the title and About button */
+	
+}
+
+/* Data Source text in lower left of map */
+.dataSource {
+	color: gray;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++ */
+/* Tues. 25-apr-17  New Map style      */
+/* +++++++++++++++++++++++++++++++++++ */
+
+
+#about {
+    position: absolute;
+    z-index: 2000;
+    width: 65%;
+    left: 15%;
+    top: 10%;
+    background-color:rgba(40,40,40,0.95);
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px grey solid;
+    color: whitesmoke;
+    display: none;
+}
+
+#about > div {
+    width: 60%;
+    float: left;
+    border-right: 1px solid #d4d4d4;
+    margin-right: 25px;
+    padding-right: 25px;
+}
+
+
+
+#about h3, #about h4 {
+	font-family: 'Lato', 'tahoma', 'sans-serif';
+    font-variant: small-caps;
+    font-size: 1.6em;
+    margin: 8px auto 10px;
+}
+
+
+#about h4 {
+    font-size: 1.2em;   
+}
+#about p, #about li {
+    /* color: whitesmoke; */
+	
+	color: yellow
+    font-size: .9em;
+    margin: 0 0 10px;
+    line-height: 1.4em;
+}
+#about li {
+    list-style-type: none;
+    margin-bottom: .6em;
+}
+
+
+#about a {
+    color: #48a3c8;
+}
+b {
+    font-weight: bold;
+}
+
+
+/* This section adds a shadow on the Title 
+	The map moves towards the top and the 
+ 	title over draws the map
+*/
+
+h1 {
+    /* font-family: 'Montserrat', serif; */
+	font-family: tahoma;
+    /* position: absolute; */	/* this moves the map towards the top of the screen */
+								/* removing it moves the map down; puts title in a gray area */
+	/* position: absolute; */
+		
+    z-index: 200;
+    color: #f0f9e8;
+    letter-spacing: .16em;
+    /* font-size: 2.5em; */  /* Tues, 25-apr-17 */
+	/*
+	font-size: 1.9em;
+    font-weight: 400;
+	*/
+    /* top: -15px; */
+	
+	/* top: 20px;	*/	/* positive numbers moves the title down */
+    /* left: 80px; */
+	
+    /* text-shadow: 2px 2px 0 #282828, 4px 4px 0 #43a2ca; */
+    display: inline-block; 
+	
+	font-size: 2.0em;
+	
+    float: left;
+}
+#dismiss {
+	color: #0ca50c;
+}
+
+/* Color of text in About Box */
+p {
+	color: #ff8900;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 img {
+    position: absolute;
+    top: 10px;
+    left: -70px;
+}
+h2 {
+    font-family: 'Montserrat', serif;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    z-index: 200;
+    max-width: 40%;
+    color: #f0f9e8;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-variant: small-caps;
+    display: inline-block;
+}
+
+
+/* ------------ */
+/* About Button */
+/* ------------ */
+
+#huh {
+    /* position: absolute; */	/* this make the entire map gray and hides the map */
+	
+   /*top: 115px;*/	/* Wed, 26-apr-17 testing */
+   /*left: 95px;*/ 	/* Changing these 2 doesn't move the "About" box */
+	
+    font-family: arial;
+	
+    padding: 3px 6px;   /* Wed 26-apr-17 */
+	
+    z-index: 1300;
+    /* color: #f0f9e8; */  /* white */
+	color: #f28f1c;	
+	
+    font-size: 1.2em;
+    background-color:rgba(40,40,40,0.8);
+    border: 1px grey solid; 
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+
+#huh:hover {
+   background-color:rgba(255,255,255,0.8); 
+   color: #202020;
+}
+h3 {
+    font-size: 1.1em;   
+}
+
+
+/* ----------------------- */
+/* Weather Forecast Button */
+/* ----------------------- */
+
+#weather {
+    /* position: absolute; */	/* this make the entire map gray and hides the map */
+	
+   /*top: 115px;*/	/* Wed, 26-apr-17 testing */
+   /*left: 95px;*/ 	/* Changing these 2 doesn't move the "About" box */
+	
+    font-family: arial;
+	
+    padding: 3px 6px;   /* Wed 26-apr-17 */
+	
+    z-index: 1300;
+    /* color: #f0f9e8; */  /* white */
+	color: #f28f1c;	
+	
+    font-size: 1.2em;
+    background-color:rgba(40,40,40,0.8);
+    border: 1px grey solid; 
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+/* --------------------------------- */
+/* Emergency Contacts Wed. 26-Apr-17 */
+/* --------------------------------- */
+
+#emergency {
+    position: absolute;
+    z-index: 2000;
+    width: 65%;
+    left: 15%;
+    top: 10%;
+    background-color:rgba(40,40,40,0.95);
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px grey solid;
+    color: whitesmoke;
+    display: none;
+}
+
+#emergency > div {
+    width: 40%;		/* Width of the Left Column */
+    float: left;
+    border-right: 1px solid #f70c0c;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
+
+
+#emergency h3, #emergency h4 {
+	font-family: 'Lato', 'tahoma', 'sans-serif';
+    font-variant: small-caps;
+    font-size: 1.6em;
+    margin: 8px auto 10px;
+}
+
+
+#emergency h4 {
+    font-size: 1.2em;   
+}
+#emergency p, #emergency li {
+    /* color: whitesmoke; */
+	
+	color: yellow
+    font-size: .9em;
+    margin: 0 0 10px;
+    line-height: 1.4em;
+}
+#emergency li {
+    list-style-type: none;
+    margin-bottom: .6em;
+}
+
+
+#emergency a {
+    color: #48a3c8;
+}
+
+/* ------------------------- */
+/* Emergency Contacts Button */
+/* ------------------------- */
+
+#contacts {
+    /* position: absolute; */	/* this make the entire map gray and hides the map */
+	
+   /*top: 115px;*/	/* Wed, 26-apr-17 testing */
+   /*left: 95px;*/ 	/* Changing these 2 doesn't move the "About" box */
+	
+    font-family: arial;
+	
+    padding: 3px 6px;   /* Wed 26-apr-17 */
+	
+    z-index: 1300;
+    /* color: #f0f9e8; */  /* white */
+	color: #f28f1c;	
+	
+    font-size: 1.2em;
+    background-color:rgba(40,40,40,0.8);
+    border: 1px grey solid; 
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+
+#contacts:hover {
+   background-color:rgba(255,255,255,0.8); 
+   color: #202020;
+}
+
+
+/* ------------------ */
+
+b {
+    font-weight: bold;
+}
+
+
+
+
+/* Move Leaflet Controls towards Bottom of Map Page */
+.leaflet-top {
+	/* padding: 10px;	*/	/* increasing this gives more padding at top of the */
+	top: 230px;				/* Positive numbers moves the control towards bottom */
+
+	position: absolute;
+}
+
+
